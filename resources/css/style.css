@@ -4,10 +4,11 @@ html {
 
 .container {
   margin: 0 auto;
+  max-width: 1440px;
 }
 
 /* Header */
-header {
+header .main-header {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -16,8 +17,19 @@ header {
   height: 64px;
 }
 
+header .thumbnail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .logo {
   padding-left: 24px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 header span {
@@ -25,8 +37,10 @@ header span {
 }
 
 nav li {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: flex-end;
   padding-left: 16px;
+  flex: 1;
 }
 
 /* Banner */
@@ -75,7 +89,7 @@ nav li {
 }
 
 #main .main-section img{
-  width: 83%;
+  width: 85%;
 }
 
 .main-section {
@@ -141,7 +155,11 @@ nav li {
 #course .course {
   margin-left: 32px;
   background-color: white;
-  width: auto;
+  width: 400px;
+}
+
+#course .course img {
+  width: 400px;
 }
 
 .course h3 {
@@ -192,23 +210,27 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
   background-color:#d6d8db;
 }
 
-footer ul li {
+footer .nav li {
   display: inline-flex;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 /* Mobile */
-@media only screen and (max-width: 480px) {
-  header {
+@media only screen and (min-width: 480px) {
+  header .thumbnail {
     display: none;
   }
+}
 
-  header {
-
+@media only screen and (max-width: 480px) {
+  header .main-header {
+    display: none;
   }
 
   #banner img {
